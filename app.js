@@ -23,7 +23,7 @@ const Item= mongoose.model("Post",itemSchema);
 
 const homeStartingContent = {
   name:"首頁",
-  content:"歡迎來到承修的留言板,點擊留言給我,你可以寫下任何你想留言的哦"
+  content:"歡迎來到承修的留言板,點擊留言給我,你可以寫下任何你想留言的哦!!!標題要記得打唷 "
 };
 const aboutContent = {
   name:"關於",
