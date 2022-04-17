@@ -41,10 +41,9 @@ html {
 
 
 
-/* @media query {
+@media screen and (max-width: 480px) {
 
-.contact
-
-
-
-} */
+body{
+  font-size: 5rem;
+}
+}
