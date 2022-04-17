@@ -43,15 +43,15 @@ html {
 
 @media (max-width:1028px)
  {
-   
+
 h1{
-  font-size: 3rem;
+  font-size: 6rem;
 }
 li{
-  font-size: 2rem;
+  font-size: 4rem;
 }
 p{
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 }
