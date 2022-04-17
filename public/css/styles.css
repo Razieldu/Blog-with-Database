@@ -43,7 +43,9 @@ html {
 
 @media screen and (max-width: 480px) {
 
-body{
+ li,p,h1{
   font-size: 5rem;
 }
+
+
 }
