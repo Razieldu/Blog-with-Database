@@ -41,11 +41,9 @@ html {
 
 
 
-@media only screen
-and (min-devive-width: 375px)
-and (max-device-width:812px)
-and (-webkit-min-device-pixel-ratio:3 )
+@media (max-width:1028px)
  {
+   
 h1{
   font-size: 3rem;
 }
