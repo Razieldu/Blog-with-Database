@@ -49,7 +49,7 @@ html {
  {
 
 h1{
-  font-size: 6rem;
+  font-size: 7rem;
 }
 li{
   font-size: 2.5rem;
@@ -89,6 +89,12 @@ img{
 
 label{
   font-size: 4rem;
+  padding-top: 50px;
 }
+
+button{
+  font-size: 4rem;
+}
+
 
 }
