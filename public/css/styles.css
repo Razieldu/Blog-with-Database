@@ -100,12 +100,12 @@ label{
 }
 
 button{
-  color:white;
-  background-color:#0275d8;
-  border-radius: 10px;
-  padding: 6px 14px;
-  border:0;
-  font-size: 4rem;
+  color:white; ! Important
+  background-color:#0275d8 !Important;
+  border-radius: 10px ! Important;
+  padding: 6px 14px ! Important;
+  border:0  !Important;
+  font-size: 4rem! Important;
 }
 
 
