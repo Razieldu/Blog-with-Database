@@ -48,10 +48,20 @@ h1{
   font-size: 6rem;
 }
 li{
-  font-size: 4rem;
+  font-size: 3.2rem;
 }
 p{
   font-size: 4rem;
+}
+
+.footer p {
+	margin-top: 25px;
+	font-size: 3.5rem;
+  color: #fff;
+}
+image{
+  height:440px;
+  width:280px;
 }
 
 }
