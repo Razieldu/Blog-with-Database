@@ -39,6 +39,10 @@ html {
   color: #fff;
 }
 
+.sky{
+  height:220px;
+  width:280px;
+}
 
 
 @media (max-width:1028px)
@@ -48,10 +52,10 @@ h1{
   font-size: 6rem;
 }
 li{
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 title{
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 p{
   font-size: 4rem;
@@ -60,7 +64,7 @@ p{
 .footer p {
 	font-size: 3.5rem;
   color: #fff;
-  /* margin-top: 25px; */
+  margin-top: 50px;
 }
 
 .footer {
@@ -68,14 +72,14 @@ p{
 	text-align: center;
 	/* bottom: 0; */
 	width: 100%;
-	height: 240px;
+	height: 180px;
 	background-color: #1abc9c;
 }
 
 
 img{
   height:440px;
-  width:280px;
+  width:400px;
 }
 
 
