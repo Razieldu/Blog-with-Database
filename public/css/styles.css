@@ -62,9 +62,7 @@ li{
   font-size: 2.5rem;
 
 }
-title{
-  font-size: 4rem;
-}
+
 p{
   font-size: 3rem;
 }
@@ -111,9 +109,12 @@ button{
   font-size: 3.5rem! Important;
 }
 
-
 footer{
 padding-top: 50px;
+}
+
+.navbar-brand{
+  font-size:2.5rem !Important;
 }
 
 }
