@@ -2,11 +2,14 @@
 <%- include("partials/header"); -%>
 <body>
   <div class="container">
+    <hr class="homehr">
     <br>
     <h1>Home</h1>
     <p> <%= startingContent[0].content %> </p>
+     <br>
      <hr class="homehr">
    <% for(let i=1;i<startingContent.length;i++){ %>
+     <br>
      <h1><%=startingContent[i].name%></h1>
      <p>
      <%=startingContent[i].content.substring(0, 100) + " ..."%>
