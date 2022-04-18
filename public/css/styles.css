@@ -51,6 +51,11 @@ html {
   border-radius: 50px;
 }
 
+hr{
+  border: dotted 10px #EAF6F6;
+  border-bottom:none;
+  width:7%;
+}
 
 @media (max-width:1028px)
  {
