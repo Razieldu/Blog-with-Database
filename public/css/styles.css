@@ -54,12 +54,13 @@ html {
 hr.homehr{
   border: dotted #EAF6F6;
   border-bottom:none;
+  width:7%;
 }
 
 hr.dot{
   border: dotted 10px #EAF6F6;
   border-bottom:none;
-  width:7%;
+  width:5%;
 }
 
 @media (max-width:1028px)
