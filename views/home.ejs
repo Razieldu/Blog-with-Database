@@ -2,6 +2,7 @@
 <%- include("partials/header"); -%>
 <body>
   <div class="container">
+    <br>
     <h1>Home</h1>
     <p> <%= startingContent[0].content %> </p>
      <hr class="homehr">
@@ -11,6 +12,7 @@
      <%=startingContent[i].content.substring(0, 100) + " ..."%>
      <a href="/posts/<%=startingContent[i].name%>">Read More</a>
      </p>
+     <br>
      <hr class="dot" >
    <%}%>
  </div>
