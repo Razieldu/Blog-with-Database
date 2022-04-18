@@ -65,11 +65,11 @@ title{
   font-size: 4rem;
 }
 p{
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .footer p {
-	font-size: 3.5rem;
+	font-size: 3rem;
   color: #fff;
   margin-top: 55px;
 }
@@ -79,7 +79,7 @@ p{
 	text-align: center;
 	/* bottom: 0; */
 	width: 100%;
-	height: 180px;
+	height: 150px;
 	background-color: #1abc9c;
 }
 

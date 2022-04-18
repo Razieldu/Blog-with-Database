@@ -110,7 +110,7 @@ app.post("/compose", function(req, res){
 });
 
 app.get("/posts/:postName", function(req, res){
-  const requestedTitle = _.lowerCase(req.params.postName);
+  const requestedTitle = _.split(lowerCase(req.params.postName));
   Item.find({name:requestedTitle},function(err,contentFound){
     if(err){
       console.log(err)
