@@ -51,6 +51,11 @@ html {
   border-radius: 50px;
 }
 
+hr.homehr{
+  border: dotted 10px #EAF6F6;
+  border-bottom:none;
+}
+
 hr{
   border: dotted 10px #EAF6F6;
   border-bottom:none;
