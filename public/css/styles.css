@@ -52,11 +52,11 @@ html {
 }
 
 hr.homehr{
-  border: dotted 10px #EAF6F6;
+  border: dotted #EAF6F6;
   border-bottom:none;
 }
 
-hr{
+hr.dot{
   border: dotted 10px #EAF6F6;
   border-bottom:none;
   width:7%;
