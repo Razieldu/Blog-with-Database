@@ -56,7 +56,7 @@ html {
  {
 
 h1{
-  font-size: 7rem;
+  font-size: 5rem;
 }
 li{
   font-size: 2.5rem;
@@ -75,7 +75,7 @@ p{
 }
 
 .footer {
-	position: absolute;
+	/* position: absolute; */
 	text-align: center;
 	/* bottom: 0; */
 	width: 100%;
