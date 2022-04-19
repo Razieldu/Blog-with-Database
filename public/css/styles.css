@@ -49,6 +49,10 @@ html {
   color:white
   background-color:#0275d8;
   border-radius: 50px;
+  margin-top: 0;
+ position: relative;
+ bottom:20px;
+  margin-bottom: 20px;
 }
 
 hr.homehr{
