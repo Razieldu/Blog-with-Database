@@ -1,12 +1,12 @@
 //jshint esversion:6
-
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose=require("mongoose");
 
-mongoose.connect("mongodb+srv://admin-jeremy:Sswoy123@cluster0.id8me.mongodb.net/blogDB", {
+mongoose.connect(process.env.SECRET, {
   useNewUrlParser: true
 });
 const itemSchema={
