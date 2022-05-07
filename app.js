@@ -23,7 +23,7 @@ const Item= mongoose.model("Post",itemSchema);
 
 const homeStartingContent = {
   name:"首頁",
-  content:"歡迎來到承修的留言板,點擊留言給我,你可以寫下任何你想留言的哦!!!標題要記得打唷 "
+  content:"歡迎來到承修的留言板,點擊留言給我,你可以寫下任何你想留言的哦!!!"
 };
 const aboutContent = {
   name:"關於",
@@ -35,7 +35,6 @@ const contactContent = {
 };
 
 const defaultItems=[homeStartingContent,aboutContent,contactContent];
-
 
 
 const app = express();
@@ -55,8 +54,8 @@ app.get("/", function(req, res){
           if(err){
              console.log(err)
           }else{
-            res.render("home", {startingContent:itemFound});
-            console.log("Successfuly added default items")
+            res.render("home", {startingContent:defaultItems[0]});
+
           }
         });
       }else{
@@ -65,6 +64,7 @@ app.get("/", function(req, res){
             console.log(err)
           }else{
             res.render("home", {startingContent:contentFound});
+        
           }
         })
       }
@@ -115,7 +115,7 @@ app.get("/posts/:postName", function(req, res){
     if(err){
       console.log(err)
     }else{
-
+      console.log(contentFound)
       res.render("post",{title:requestedTitle,content:contentFound[0].content})
     }
   })

@@ -5,10 +5,13 @@
     <hr class="homehr">
     <br>
     <h1>Home</h1>
-    <p> <%= startingContent[0].content %> </p>
+    <%if(startingContent.name==="首頁"){%>
+    <p><%= startingContent.content %></p>
+    <%}else{%>
+    <p><%= startingContent[0].content %> </p>
      <br>
      <hr class="homehr">
-   <% for(let i=1;i<startingContent.length;i++){ %>
+    <%for(let i=1;i<startingContent.length;i++){ %>
      <br>
      <nobr><h1><span>🧸&emsp;</span><%=startingContent[i].name%></h1></nobr>
      <p>
@@ -18,7 +21,7 @@
      </p>
      <br>
      <hr class="dot" >
-   <%}%>
+   <%}}%>
  </div>
  </body>
 
