@@ -1,6 +1,7 @@
 //jshint esversion:6
 require("dotenv").config();
 const express = require("express");
+const request =require("request")
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
@@ -15,28 +16,6 @@ const itemSchema={
 };
 const Item= mongoose.model("Post",itemSchema);
 
-// const postSchema={
-//   name:String,
-//   content:String
-// }
-// const Post= mongoose.model("Post",itemSchema);
-
-const homeStartingContent = {
-  name:"首頁",
-  content:"歡迎來到承修的留言板,點擊留言給我,你可以寫下任何你想留言的哦!!!"
-};
-const aboutContent = {
-  name:"關於",
-  content:"在大都會公園拍夕陽餘暉下的青青綠草"
-};
-const contactContent = {
-  name:"聯絡",
-  content:"風和日麗的擎天崗"
-};
-
-const defaultItems=[homeStartingContent,aboutContent,contactContent];
-
-
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -44,56 +23,53 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+const cities=["Taipei","Taichung","Tainan","Kaohsiung"]
+const cityArray=[]
+const cityUrls=[]
 
+app.get("/", function(req, res, next){
 
-app.get("/", function(req, res){
+  const key =process.env.WEATHER
+
+  for(i=0;i<cities.length;i++){
+    request("https://api.openweathermap.org/data/2.5/weather?q="+cities[i]+"&appid="+key+"&units=metric", function (error, response, body) {
+      const newBody=JSON.parse(body)
+      eval("const"+i+"city="+body)
+
+      let urlCom="http://openweathermap.org/img/wn/"+newBody.weather[0].icon+"@2x.png"
+
+     cityArray.push(eval("const"+i+"city"))
+     cityUrls.push(urlCom)
+
+     })
+   }
+  next()
+ },function(req,res){
   Item.find({},function(err,itemFound){
-    if(!err){
-      if(itemFound.length===0){
-        Item.insertMany(defaultItems,function(err){
-          if(err){
-             console.log(err)
-          }else{
-            res.render("home", {startingContent:defaultItems[0]});
+  if(!err){
 
-          }
-        });
-      }else{
-        Item.find({name:{$nin:["聯絡","關於"]}},function(err,contentFound){
-          if(err){
-            console.log(err)
-          }else{
-            res.render("home", {startingContent:contentFound});
-        
-          }
-        })
-      }
-    }
-  })
-});
+  res.render("home", {startingContent:itemFound,
+                        cityName:cityArray,
+                        cityIcon:cityUrls
+
+    })
+    }else{
+    console.log(err)
+      }});
+  }
+);
+
+
 
 
 app.get("/about", function(req, res){
-    Item.findOne({name:"關於"},function(err,contentFound){
-      if(err){
-        console.log(err)
-      }else{
-        res.render("about", {aboutContent:contentFound.content});
-      }
-    })
-
+        res.render("about");
 });
 
 app.get("/contact", function(req, res){
-  Item.findOne({name:"聯絡"},function(err,contentFound){
-    if(err){
-      console.log(err)
-    }else{
-      res.render("contact", {contactContent:contentFound.content });
-    }
-  })
-
+      res.render("contact");
 });
+
 
 app.get("/compose", function(req, res){
   res.render("compose");
@@ -115,23 +91,9 @@ app.get("/posts/:postName", function(req, res){
     if(err){
       console.log(err)
     }else{
-      console.log(contentFound)
       res.render("post",{title:requestedTitle,content:contentFound[0].content})
     }
   })
-
-
-  // posts.forEach(function(post){
-  //   const storedTitle = _.lowerCase(post.title);
-  //
-  //   if (storedTitle === requestedTitle) {
-  //     res.render("post", {
-  //       title: post.title,
-  //       content: post.content
-  //     });
-  //   }
-  // });
-
 });
 
 let port = process.env.PORT;
