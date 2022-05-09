@@ -3,7 +3,18 @@ html {
   position: relative;
 }
 
+h4{
+  text-align: center;
+}
 
+.main{
+margin-bottom: 80px;
+}
+
+.intro{
+margin-top:70px;
+text-align: center;
+}
 
 .navbar {
     padding-top: 15px;
@@ -20,24 +31,40 @@ html {
 
 
 .footer {
-	/* position: absolute; */
+  margin-top: 30px;
+	position: absolute;
 	text-align: center;
-  margin-top: 10px;
-  padding: 20px 0px;
-	bottom: 0;
-  height:60px;
 	width: 100%;
 	background-color: #1abc9c;
+  bottom: 0;
 }
 
-
-
-
 .footer p {
-  bottom: 0
+  margin-top: 20px;
+  margin-bottom: 20px;
 	font-size: 12px;
   color: #fff;
 }
+
+
+
+.weather{
+
+  height:70px;
+  width:70px;
+
+}
+
+.weatherdata{
+text-align: center;
+
+}
+
+.weatherhead{
+text-align: center;
+margin-bottom: 20px;
+}
+
 
 .sky{
   height: 220px;
@@ -45,13 +72,13 @@ html {
 }
 
 .button{
-  color:white
+  color:white;
   background-color:#0275d8;
   border-radius: 50px;
   margin-top: 0;
  position: relative;
  bottom:20px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
 }
 
 hr.homehr{
@@ -64,20 +91,33 @@ hr.dot{
   border: dotted 10px #EAF6F6;
   border-bottom:none;
   width:5%;
-  margin: 5px 0  10px;
+  margin: 5px 0  15px;
 }
 
-.postp{
-
-margin-bottom:130px;
+.contact{
+margin-bottom: 100px;
 }
 
-@media (max-width:1028px)
+.about{
+margin-bottom: 100px;
+
+}
+
+
+
+
+@media (max-width:1180px)
  {
 
 h1{
   font-size: 4.5rem;
 }
+
+h2{
+text-align: center;
+
+}
+
 li{
   font-size: 2.2rem;
 
@@ -87,31 +127,8 @@ p{
   font-size: 3rem;
 }
 
-.footer p {
-	font-size: 2.5rem;
-  color: #fff;
-  margin-top: 30px;
-  padding-bottom: 70px;
-}
-
-.footer {
-	/* position: absolute; */
-	text-align: center;
-
-	/* bottom: 0; */
-	width: 100%;
-	height: 100px;
-	background-color: #1abc9c;
-
-}
-
 
 img{
-  height:440px;
-  width:600px;
-}
-
-.sky{
   height:440px;
   width:600px;
 }
@@ -122,7 +139,7 @@ label{
 }
 
 button{
-  color:white; ! Important
+  color:white!Important;
   background-color:#0275d8 !Important;
   border-radius: 10px ! Important;
   padding: 6px 14px ! Important;
@@ -130,8 +147,42 @@ button{
   font-size: 3.5rem! Important;
 }
 
-footer{
-padding-top: 50px;
+
+.intro{
+  margin-bottom: 40px;
+  margin-top:40px;
+}
+
+.weatherhead{
+
+margin-bottom: 20px;
+}
+
+
+.citytemp{
+
+  margin-bottom: 10px;
+}
+
+
+.footer p {
+	font-size: 2.5rem;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.footer {
+  position: absolute;
+	text-align: center;
+	background-color: #1abc9c;
+  bottom:0;
+  /* //手機模式要使用這個property div footer才會貼地// */
+}
+
+.sky{
+  height:440px;
+  width:600px;
 }
 
 .navbar-brand{

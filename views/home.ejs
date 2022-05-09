@@ -1,22 +1,24 @@
 
 <%- include("partials/header"); -%>
 <body>
-  <div class="container">
+  <div class="container main">
     <hr class="homehr">
     <div class="row">
 
-      <div class="col-sm-6 col-md-6 col-lg-6 ">
-      <h1>Home</h1>
-      <br>
-      <p>歡迎來到承修留言板,點擊留言給我,你可以寫下任何你想留言的哦</p>
+      <div class="col-sm-12 col-md-12 col-lg-6 introdiv ">
+
+      <h2 class="intro">歡迎來到Jeremy的部落格</h2>
+
       </div>
-      <div class="col-sm-6 col-md-6 col-lg-6">
+
+      <div class="col-sm-12 col-md-6 col-lg-6">
         <div class="row">
+        <h1 class="weatherhead ">本日天氣</h1>
         <%for(i=0;i<4;i++){%>
-        <div class="col-md-6 col-lg-3">
-        <h4><%=cityName[i].name%></h4>
-        <img src="<%=cityIcon[i]%>">
-        <p><%=cityName[i].main.temp%>°C</p>
+        <div class="col-sm-3 col-md-6 col-lg-3 weatherdata ">
+        <h5 class="cityname"><%=cityName[i].name%></h5>
+        <img src="<%=cityIcon[i]%>" class="weather">
+        <p class="citytemp" ><%=cityName[i].main.temp%>°C</p>
         </div>
         <%}%>
       </div>
@@ -24,7 +26,7 @@
      <br>
      <hr class="homehr">
     </div>
-    <%for(let i=1;i<startingContent.length;i++){ %>
+    <%for(let i=0;i<startingContent.length;i++){ %>
      <br>
      <nobr><h1><span>🧸&emsp;</span><%=startingContent[i].name%></h1></nobr>
      <p>
@@ -33,7 +35,9 @@
      <a href="/posts/<%=startingContent[i].name%>">Read More</a>
      </p>
      <br>
-    <hr class="dot" >
+     <hr class="dot" >
+
+
    <%}%>
 
  </div>

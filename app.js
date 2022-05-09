@@ -48,7 +48,7 @@ app.get("/", function(req, res, next){
   Item.find({},function(err,itemFound){
   if(!err){
 
-  res.render("home", {startingContent:itemFound,
+  res.render("home", { startingContent:itemFound,
                         cityName:cityArray,
                         cityIcon:cityUrls
 
