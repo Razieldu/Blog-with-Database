@@ -124,7 +124,7 @@ li{
 }
 
 p{
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 
@@ -155,13 +155,13 @@ button{
 
 .weatherhead{
 
-margin-bottom: 20px;
+margin-bottom: 40px;
 }
 
 
 .citytemp{
 
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 

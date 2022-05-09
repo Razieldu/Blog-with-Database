@@ -48,15 +48,19 @@ app.get("/", function(req, res, next){
   Item.find({},function(err,itemFound){
   if(!err){
 
+  if(cityArray[3]){
+
   res.render("home", { startingContent:itemFound,
                         cityName:cityArray,
-                        cityIcon:cityUrls
-
-    })
+                        cityIcon:cityUrls})
+    }
     }else{
     console.log(err)
       }});
+
+
   }
+
 );
 
 
