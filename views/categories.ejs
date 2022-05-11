@@ -1,0 +1,47 @@
+<%- include("partials/header"); -%>
+    <div class="container about ">
+      <hr class="homehr">
+      <br>
+      <h1>文章分類</h1>
+      <br>
+      <hr class="homehr">
+
+      <br>
+
+      <br>
+      <%let cateName=[]%>
+      <%for(let x =0;x<postCategory.length;x++){%>
+      <% cateName.push(postCategory[x].categories) %>
+      <%}%>
+      <%let data=[]%>
+      <%let flag=0%>
+        <%for(let i=0;i<cateName.length;i++){%>
+         <%let count=""%>
+         <%for(let j=0;j<data.length;j++){%>
+          <%if(data[j][0]==cateName[i]){%>
+           <%flag=1%>
+           <%count=j%>
+           <%break;%>
+          <%}%>
+         <%}%>
+        <%if(flag==1){%>
+        <%data[count].push(cateName[i])%>
+         <%flag=0%>
+        <%}else if(flag==0){%>
+        <%jeremy=new Array()%>
+        <%jeremy.push(cateName[i])%>
+        <%data.push(jeremy)%>
+        <%}%>
+        <%}%>
+
+       <%for(let z=0;z<data.length;z++){%>
+        <h1><a href="/categories/<%=data[z][0]%>">⭐<%=z+1%>.<%=data[z][0]%></a></h1>
+       <%}%>
+
+      <br>
+      <br>
+    </div>
+
+
+
+<%- include("partials/footer"); -%>

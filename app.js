@@ -12,6 +12,7 @@ mongoose.connect(process.env.SECRET, {
 });
 const itemSchema={
   name:String,
+  categories:String,
   content:String
 };
 const Item= mongoose.model("Post",itemSchema);
@@ -66,9 +67,30 @@ app.get("/", function(req, res, next){
 
 
 
-app.get("/about", function(req, res){
-        res.render("about");
+app.get("/categories", function(req, res){
+  Item.find({},function(err,postFound){
+  if(!err){
+   res.render("categories",{postCategory:postFound});
+  }else{
+ console.log(err)
+}})
 });
+
+app.get("/categories/:categoriesName",function(req,res){
+const categoriesName =_.lowerCase(req.params.categoriesName);
+Item.find({categories:categoriesName},function(err,samecateFound){
+  if(err){
+    console.log(err)
+  }else{
+   res.render("categorieseach",{categoriestheSame:samecateFound})
+  }
+})
+
+
+})
+
+
+
 
 app.get("/contact", function(req, res){
       res.render("contact");
@@ -79,10 +101,16 @@ app.get("/compose", function(req, res){
   res.render("compose");
 });
 
+
+
+
+
+
 app.post("/compose", function(req, res){
 
   const postNew= new Item({
     name:req.body.postTitle,
+    categories:req.body.postCategories,
     content:req.body.postBody
   })
   postNew.save();

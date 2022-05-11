@@ -1,0 +1,31 @@
+<%- include("partials/header");-%>
+<div class="container">
+<hr class="homehr">
+<br>
+<h1><%=categoriestheSame[0].categories%>分類</h1>
+<br>
+<hr class="homehr">
+
+
+
+
+<%for(let i=0; i<categoriestheSame.length;i++){%>
+
+<h1><a href="/posts/<%=categoriestheSame[0].name%>"><%=i+1%>.<%=categoriestheSame[i].name%></a></h1>
+<%}%>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer");-%>

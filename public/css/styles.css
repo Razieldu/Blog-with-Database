@@ -103,8 +103,13 @@ margin-bottom: 100px;
 
 }
 
-
-
+.labelname{
+  margin-top:10px;
+  font-size: 16px;
+}
+.form-group{
+font-size: 0
+}
 
 @media (max-width:1180px)
  {
@@ -133,7 +138,7 @@ img{
   width:600px;
 }
 
-label{
+.labelname{
   font-size: 4rem;
   padding-top: 50px;
 }
@@ -144,7 +149,7 @@ button{
   border-radius: 10px ! Important;
   padding: 6px 14px ! Important;
   border:0  !Important;
-  font-size: 3.5rem! Important;
+  font-size: 3rem! Important;
 }
 
 
